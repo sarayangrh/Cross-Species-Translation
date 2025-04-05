@@ -1,0 +1,148 @@
+{
+  "" : {
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslator-master.dia",
+    "emit-module-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslator-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslator-master-emit-module.dia",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslator-master.swiftdeps"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/ContentView.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/DogBarkTranslatorApp.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslatorApp.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslatorApp.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslatorApp.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslatorApp.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslatorApp.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslatorApp.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslatorApp.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/DogBarkTranslatorApp~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/Models/Recording.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/Recording.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/Recording.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/Recording.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/Recording.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/Recording.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/Recording.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/Recording.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/Recording~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/Services/AudioManager.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/AudioManager.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/AudioManager.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/AudioManager.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/AudioManager.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/AudioManager.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/AudioManager.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/AudioManager.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/AudioManager~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/Services/MLManager.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/MLManager.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/MLManager.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/MLManager.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/MLManager.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/MLManager.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/MLManager.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/MLManager.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/MLManager~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/Services/RecordingStore.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordingStore.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordingStore.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordingStore.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordingStore.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordingStore.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordingStore.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordingStore.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordingStore~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/ViewModels/HistoryViewModel.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryViewModel.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryViewModel.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryViewModel.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryViewModel.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryViewModel.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryViewModel.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryViewModel.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryViewModel~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/ViewModels/RecordViewModel.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordViewModel.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordViewModel.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordViewModel.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordViewModel.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordViewModel.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordViewModel.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordViewModel.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordViewModel~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/ViewModels/SettingsViewModel.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsViewModel.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsViewModel.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsViewModel.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsViewModel.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsViewModel.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsViewModel.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsViewModel~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/Views/HistoryView.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryView.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryView.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryView.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryView.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryView.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryView.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryView.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/HistoryView~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/Views/RecordView.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordView.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordView.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordView.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordView.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordView.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordView.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordView.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/RecordView~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/Views/SaveRecordingView.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SaveRecordingView.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SaveRecordingView.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SaveRecordingView.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SaveRecordingView.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SaveRecordingView.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SaveRecordingView.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SaveRecordingView.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SaveRecordingView~partial.swiftmodule"
+  },
+  "/Users/yangniu/Desktop/DogBarkTranslator/DogBarkTranslator/Views/SettingsView.swift" : {
+    "const-values" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsView.dia",
+    "index-unit-output-path" : "/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/yangniu/Desktop/DogBarkTranslator/DerivedData/Build/Intermediates.noindex/DogBarkTranslator.build/Debug-iphoneos/DogBarkTranslator.build/Objects-normal/arm64/SettingsView~partial.swiftmodule"
+  }
+}
