@@ -30,7 +30,7 @@ class RecordViewModel: NSObject, ObservableObject {
     private let mlManager = MLManager.shared
     private let recordingStore = RecordingStore.shared
     private var recordingTimer: Timer?
-    let minimumRecordingDuration: TimeInterval = 10.0
+    let minimumRecordingDuration: TimeInterval = 4.0
     
     override init() {
         self.predictionTypes = PredictionType.allTypes
