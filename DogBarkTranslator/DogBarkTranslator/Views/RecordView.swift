@@ -92,7 +92,7 @@ struct RecordView: View {
                                     .frame(height: 60)
                             }
                         } else {
-                            Text("Ready to record\nTap to start (minimum 10s)")
+                            Text("Ready to record\nTap to start (minimum 4s)")
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.secondary)
                         }
