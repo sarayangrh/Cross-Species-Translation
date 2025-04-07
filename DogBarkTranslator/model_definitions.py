@@ -9,6 +9,11 @@ Original file is located at
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
+import torchaudio
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import JSONResponse
+from io import BytesIO
 
 # Model definition
 class CNN(nn.Module):
@@ -96,19 +101,22 @@ def load_model(model_class, weights_path, num_classes):
     return model
 
 # Creating API
+'''
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 import torch
 import torchaudio
 from io import BytesIO
 from model_definitions import Model1, load_model
+'''
 
 app = FastAPI()
 
+
 # Load models
-context_model = load_model(CNN, "DogBarkTranslator/Models_format_ipynb/weightsForContextPredict.pth")
-name_model = load_model(CNN, "DogBarkTranslator/Models_format_ipynb/weightsForNamePredict.pth")
-breed_model = load_model(CNN, "DogBarkTranslator/Models_format_ipynb/weightsForBreedPredict.pth")
+context_model = load_model(CNN, "Models_format_ipynb/weightsForContextPredict.pth", num_classes=3)
+name_model = load_model(CNN, "Models_format_ipynb/weightsForNamePredict.pth", num_classes=10)
+breed_model = load_model(CNN, "Models_format_ipynb/weightsForBreedPredict.pth", num_classes=6)
 
 @app.get("/")
 def root():
@@ -120,10 +128,26 @@ async def predict(file: UploadFile = File(...)):
     waveform, sample_rate = torchaudio.load(BytesIO(audio_bytes))
 
     # Preprocess audio for your model here (resampling, trimming, etc.)
-
+    '''
     with torch.no_grad():
         prediction = model1(waveform.unsqueeze(0))  # Add batch dimension
         # Interpret prediction
         predicted_class = torch.argmax(prediction, dim=1).item()
 
     return JSONResponse({"prediction": predicted_class})
+    '''
+    with torch.no_grad():
+        context_pred = context_model(waveform.unsqueeze(0))  # Add batch dimension
+        name_pred = name_model(waveform.unsqueeze(0))
+        breed_pred = breed_model(waveform.unsqueeze(0))
+
+        # Interpret predictions
+        predicted_context = torch.argmax(context_pred, dim=1).item()
+        predicted_name = torch.argmax(name_pred, dim=1).item()
+        predicted_breed = torch.argmax(breed_pred, dim=1).item()
+
+    return JSONResponse({
+        "context_prediction": predicted_context,
+        "name_prediction": predicted_name,
+        "breed_prediction": predicted_breed
+    })

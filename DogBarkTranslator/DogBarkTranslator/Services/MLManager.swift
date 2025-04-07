@@ -37,6 +37,18 @@ class MLManager {
     func processAudio(_ url: URL, for types: [String]) async throws -> [PredictionResult] {
         var results: [PredictionResult] = []
         
+        for type in types {
+            let prediction = try await sendToBackend(audioURL: url, predictionType: type)
+            switch type {
+            case "Context": results.append(.context(prediction))
+            case "Breed": results.append(.breed(prediction))
+            case "Name": results.append(.name(prediction))
+            default: break
+            }
+        }
+
+        return results
+        /**
         // Convert audio to required format for ML models
         let audioFeatures = try await extractAudioFeatures(from: url)
         
@@ -60,6 +72,40 @@ class MLManager {
         }
         
         return results
+        **/
+    }
+
+    private func sendToBackend(audioURL: URL, predictionType: String) async throws -> String {
+        let boundary = UUID().uuidString
+        //var request = URLRequest(url: URL(string: "http://127.0.0.1:8000/predict/")!)
+        var request = URLRequest(url: URL(string: "http://localhost:8000/predict/")!)
+
+        request.httpMethod = "POST"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        let audioData = try Data(contentsOf: audioURL)
+        var body = Data()
+
+        body.append("--\(boundary)\r\n")
+        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"audio.wav\"\r\n")
+        body.append("Content-Type: audio/wav\r\n\r\n")
+        body.append(audioData)
+        body.append("\r\n")
+
+        body.append("--\(boundary)\r\n")
+        body.append("Content-Disposition: form-data; name=\"predict_type\"\r\n\r\n")
+        body.append("\(predictionType)\r\n")
+        body.append("--\(boundary)--\r\n")
+
+        request.httpBody = body
+
+        let (data, _) = try await URLSession.shared.data(for: request)
+        if let response = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+           let prediction = response["prediction"] {
+            return "\(prediction)"
+        } else {
+            throw NSError(domain: "PredictionError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid prediction"])
+        }
     }
     
     private func extractAudioFeatures(from url: URL) async throws -> MLMultiArray {
