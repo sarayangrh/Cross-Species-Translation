@@ -74,7 +74,7 @@ class MLManager {
         return results
         **/
     }
-
+    /***
     private func sendToBackend(audioURL: URL, predictionType: String) async throws -> String {
         let boundary = UUID().uuidString
         //var request = URLRequest(url: URL(string: "http://127.0.0.1:8000/predict/")!)
@@ -107,6 +107,42 @@ class MLManager {
             throw NSError(domain: "PredictionError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid prediction"])
         }
     }
+    ***/
+
+    private func sendToBackend(audioURL: URL, predictionType: String) async throws -> String {
+        let boundary = UUID().uuidString
+        var request = URLRequest(url: URL(string: "http://localhost:8000/predict/")!)
+
+        request.httpMethod = "POST"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        let audioData = try Data(contentsOf: audioURL)
+        var body = Data()
+
+        // Manually construct the multipart body
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"audio.wav\"\r\n".data(using: .utf8)!)
+        body.append("Content-Type: audio/wav\r\n\r\n".data(using: .utf8)!)
+        body.append(audioData) // Append the actual audio data
+        body.append("\r\n".data(using: .utf8)!)
+
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"predict_type\"\r\n\r\n".data(using: .utf8)!)
+        body.append("\(predictionType)\r\n".data(using: .utf8)!)
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+
+        request.httpBody = body
+
+        // Perform the POST request
+        let (data, _) = try await URLSession.shared.data(for: request)
+        if let response = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+        let prediction = response["prediction"] {
+            return "\(prediction)"
+        } else {
+            throw NSError(domain: "PredictionError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid prediction"])
+        }
+    }
+
     
     private func extractAudioFeatures(from url: URL) async throws -> MLMultiArray {
         // TODO: Implement audio feature extraction
