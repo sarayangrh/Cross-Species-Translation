@@ -124,6 +124,46 @@ def root():
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
+    # Read the audio file
+    audio_bytes = await file.read()
+
+    # Load audio into a waveform (ensure your file is in a format supported by torchaudio)
+    waveform, sample_rate = torchaudio.load(BytesIO(audio_bytes))
+    print(f"Waveform shape: {waveform.shape}, Sample rate: {sample_rate}")
+
+    # Resample if needed (example if the model expects 16000 Hz)
+    resampler = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=16000)
+    waveform = resampler(waveform)
+    print(f"Resampled waveform shape: {waveform.shape}")
+
+    # Perform prediction
+    with torch.no_grad():
+        # Add batch dimension for models expecting it
+        context_pred = context_model(waveform.unsqueeze(0))
+        name_pred = name_model(waveform.unsqueeze(0))
+        breed_pred = breed_model(waveform.unsqueeze(0))
+
+        # Print model outputs before argmax
+        print("Context model output:", context_pred)
+        print("Name model output:", name_pred)
+        print("Breed model output:", breed_pred)
+
+        # Apply softmax and argmax to get the predicted class
+        context_pred = torch.argmax(torch.nn.functional.softmax(context_pred, dim=1), dim=1).item()
+        name_pred = torch.argmax(torch.nn.functional.softmax(name_pred, dim=1), dim=1).item()
+        breed_pred = torch.argmax(torch.nn.functional.softmax(breed_pred, dim=1), dim=1).item()
+
+    # Return the predictions as a JSON response
+    return JSONResponse({
+        "context_prediction": context_pred,
+        "name_prediction": name_pred,
+        "breed_prediction": breed_pred
+    })
+
+
+'''
+@app.post("/predict/")
+async def predict(file: UploadFile = File(...)):
     audio_bytes = await file.read()
     waveform, sample_rate = torchaudio.load(BytesIO(audio_bytes))
 
@@ -151,3 +191,5 @@ async def predict(file: UploadFile = File(...)):
         "name_prediction": predicted_name,
         "breed_prediction": predicted_breed
     })
+'''
+
