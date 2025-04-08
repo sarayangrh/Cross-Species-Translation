@@ -169,12 +169,14 @@ async def predict(file: UploadFile = File(...)):
 
     # Preprocess audio for your model here (resampling, trimming, etc.)
     '''
+    '''
     with torch.no_grad():
         prediction = model1(waveform.unsqueeze(0))  # Add batch dimension
         # Interpret prediction
         predicted_class = torch.argmax(prediction, dim=1).item()
 
     return JSONResponse({"prediction": predicted_class})
+    '''
     '''
     with torch.no_grad():
         context_pred = context_model(waveform.unsqueeze(0))  # Add batch dimension
