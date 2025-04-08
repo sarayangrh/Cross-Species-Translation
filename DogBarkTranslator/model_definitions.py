@@ -15,6 +15,7 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from io import BytesIO
 
+
 # Model definition
 class CNN(nn.Module):
     def __init__(self, input_channels=1, num_classes=3):
@@ -126,6 +127,8 @@ def root():
 async def predict(file: UploadFile = File(...)):
     # Read the audio file
     audio_bytes = await file.read()
+
+    torchaudio.set_audio_backend("sox_io")
 
     # Load audio into a waveform (ensure your file is in a format supported by torchaudio)
     waveform, sample_rate = torchaudio.load(BytesIO(audio_bytes))
