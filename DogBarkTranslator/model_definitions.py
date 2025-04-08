@@ -110,7 +110,7 @@ from io import BytesIO
 from model_definitions import Model1, load_model
 '''
 
-app = FastAPI()
+app = FastAPI(max_length=10 * 1024 * 1024)
 
 
 # Load models

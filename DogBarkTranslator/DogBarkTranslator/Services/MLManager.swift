@@ -141,6 +141,9 @@ class MLManager {
         } else {
             throw NSError(domain: "PredictionError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid prediction"])
         }
+        print("Audio URL: \(audioURL)")
+        print("Request Body: \(String(data: body, encoding: .utf8) ?? "No body data")")
+
     }
 
     
