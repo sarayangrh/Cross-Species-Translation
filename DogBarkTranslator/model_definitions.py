@@ -161,37 +161,5 @@ async def predict(file: UploadFile = File(...)):
     })
 
 
-'''
-@app.post("/predict/")
-async def predict(file: UploadFile = File(...)):
-    audio_bytes = await file.read()
-    waveform, sample_rate = torchaudio.load(BytesIO(audio_bytes))
 
-    # Preprocess audio for your model here (resampling, trimming, etc.)
-    '''
-    '''
-    with torch.no_grad():
-        prediction = model1(waveform.unsqueeze(0))  # Add batch dimension
-        # Interpret prediction
-        predicted_class = torch.argmax(prediction, dim=1).item()
-
-    return JSONResponse({"prediction": predicted_class})
-    '''
-    '''
-    with torch.no_grad():
-        context_pred = context_model(waveform.unsqueeze(0))  # Add batch dimension
-        name_pred = name_model(waveform.unsqueeze(0))
-        breed_pred = breed_model(waveform.unsqueeze(0))
-
-        # Interpret predictions
-        predicted_context = torch.argmax(context_pred, dim=1).item()
-        predicted_name = torch.argmax(name_pred, dim=1).item()
-        predicted_breed = torch.argmax(breed_pred, dim=1).item()
-
-    return JSONResponse({
-        "context_prediction": predicted_context,
-        "name_prediction": predicted_name,
-        "breed_prediction": predicted_breed
-    })
-'''
 
