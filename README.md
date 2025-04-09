@@ -66,7 +66,12 @@ More detailed results such as confusion matrices, learning rates, and validation
 ## Usage
 
 ```python
-# Fill in with instructions how to use
+pip install -r #install libraries such as torch
+
+#before running have xcode downloaded for simulation
+
+#run by writting the following in the terminal:
+uvicorn model_definitions:app --reload --host 0.0.0.0 --port 8000 
 ```
 
 ---
