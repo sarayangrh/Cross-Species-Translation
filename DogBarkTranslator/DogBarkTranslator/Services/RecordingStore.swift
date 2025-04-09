@@ -34,7 +34,7 @@ class RecordingStore: ObservableObject {
             id: UUID(),
             timestamp: Date(),
             audioURL: permanentURL,
-            predictions: predictions.map { $0.description },
+            predictions: formatPredictionResults(predictions), // Use the new helper function
             title: title,
             notes: notes,
             photoURL: finalPhotoURL
@@ -43,6 +43,24 @@ class RecordingStore: ObservableObject {
         recordings.insert(recording, at: 0)
         try await saveRecordings()
     }
+
+// Helper function to format PredictionResult objects to a string
+private func formatPredictionResults(_ predictions: [PredictionResult]) -> [String] {
+    return predictions.map { result in
+        var resultStr = ""
+        if !result.context_prediction.isEmpty {
+            resultStr += "Context: \(result.context_prediction)"
+        }
+        if !result.name_prediction.isEmpty {
+            resultStr += "\nName: \(result.name_prediction)"
+        }
+        if !result.breed_prediction.isEmpty {
+            resultStr += "\nBreed: \(result.breed_prediction)"
+        }
+        return resultStr
+    }
+}
+
     
     func deleteRecording(_ recording: Recording) async throws {
         // Delete audio file

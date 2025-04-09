@@ -104,7 +104,9 @@ class RecordViewModel: NSObject, ObservableObject {
         do {
             let selectedTypes = getSelectedTypes()
             let predictions = try await mlManager.processAudio(audioURL, for: selectedTypes)
-            currentPrediction = predictions.map { $0.description }.joined(separator: "\n")
+            
+            // Format the prediction results for display
+            currentPrediction = formatPredictionResults(predictions)
             lastPredictions = predictions
             lastRecordingURL = audioURL
         } catch {
@@ -112,6 +114,46 @@ class RecordViewModel: NSObject, ObservableObject {
         }
         isProcessing = false
     }
+
+
+    //new feature
+    func predictFromSample(named sampleName: String) async {
+        isProcessing = true
+        currentPrediction = ""
+        error = nil
+        lastPredictions = []
+        
+        do {
+            let predictions = try await mlManager.fetchSamplePrediction(for: sampleName)
+            
+            // Format the prediction results for display
+            currentPrediction = formatPredictionResults(predictions)
+            lastPredictions = predictions
+        } catch {
+            self.error = error
+        }
+
+        isProcessing = false
+    }
+
+    // New helper function to format prediction results
+    private func formatPredictionResults(_ predictions: [PredictionResult]) -> String {
+        return predictions.map { result in
+            // Access properties of PredictionResult directly
+            var resultStr = ""
+            if !result.context_prediction.isEmpty {
+                resultStr += "Context: \(result.context_prediction)\n"
+            }
+            if !result.name_prediction.isEmpty {
+                resultStr += "Name: \(result.name_prediction)\n"
+            }
+            if !result.breed_prediction.isEmpty {
+                resultStr += "Breed: \(result.breed_prediction)\n"
+            }
+            return resultStr
+        }.joined(separator: "\n")
+    }
+
     
     func saveRecording(title: String, notes: String, photoURL: URL?) async {
         guard let audioURL = lastRecordingURL else { return }

@@ -14,6 +14,8 @@ import torchaudio
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from io import BytesIO
+from fastapi import FastAPI, HTTPException
+import os
 
 
 
@@ -131,6 +133,11 @@ def root():
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
     audio_bytes = await file.read()
+
+    
+    print(type(audio_bytes))
+    print(len(audio_bytes))
+
     torchaudio.set_audio_backend("sox_io")
     waveform, sample_rate = torchaudio.load(BytesIO(audio_bytes))
 
@@ -171,4 +178,54 @@ async def predict(file: UploadFile = File(...)):
         "name_prediction": NAME_CLASSES[name_pred],
         "breed_prediction": BREED_CLASSES[breed_pred]
     })
+
+@app.get("/predict_sample/{sample_name}")
+def predict_sample(sample_name: str):
+    file_map = {
+        "mac": "audio/Mac-8-P-8b.wav",
+        "roodie": "audio/Roodie-8-C-8m.wav",
+        "freid": "audio/Freid-A-8a.wav"
+    }
+
+    if sample_name not in file_map:
+        raise HTTPException(status_code=404, detail="Sample not found.")
+
+    file_path = file_map[sample_name]
+
+    torchaudio.set_audio_backend("sox_io")
+    waveform, sample_rate = torchaudio.load(file_path)
+
+    if sample_rate != SAMPLE_RATE:
+        resampler = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=SAMPLE_RATE)
+        waveform = resampler(waveform)
+
+    if waveform.shape[0] > 1:
+        waveform = waveform.mean(dim=0, keepdim=True)
+
+    mel_spec = mel_transform(waveform)
+
+    if mel_spec.shape[2] < 344:
+        pad_amt = 344 - mel_spec.shape[2]
+        mel_spec = F.pad(mel_spec, (0, pad_amt))
+    else:
+        mel_spec = mel_spec[:, :, :344]
+
+    mel_spec = mel_spec.unsqueeze(0)
+
+    with torch.no_grad():
+        context_pred = context_model(mel_spec)
+        name_pred = name_model(mel_spec)
+        breed_pred = breed_model(mel_spec)
+
+        context_pred = torch.argmax(context_pred, dim=1).item()
+        name_pred = torch.argmax(name_pred, dim=1).item()
+        breed_pred = torch.argmax(breed_pred, dim=1).item()
+
+    return [
+        {"label": "context_prediction", "confidence": CONTEXT_CLASSES[context_pred]},
+        {"label": "name_prediction", "confidence": NAME_CLASSES[name_pred]},
+        {"label": "breed_prediction", "confidence": BREED_CLASSES[breed_pred]},
+    ]
+
+
 
