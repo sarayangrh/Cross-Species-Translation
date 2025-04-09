@@ -1,4 +1,4 @@
-# MAIS202_Final_Project
+# MAIS202 Final Project
 Cross-Species Translation
 
 Problem Statement: 
