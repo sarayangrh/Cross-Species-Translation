@@ -111,7 +111,7 @@ class MLManager {
 
     private func sendToBackend(audioURL: URL, predictionType: String) async throws -> String {
         let boundary = UUID().uuidString
-        var request = URLRequest(url: URL(string: "http://localhost:8000/predict/")!)
+        var request = URLRequest(url: URL(string: "http://192.168.2.20:8000/predict/")!)
 
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")

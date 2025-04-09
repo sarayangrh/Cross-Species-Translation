@@ -16,6 +16,11 @@ from fastapi.responses import JSONResponse
 from io import BytesIO
 
 
+
+CONTEXT_CLASSES = ["Play", "Aggression", "Neutral"]
+NAME_CLASSES = ["Buddy", "Max", "Bella", "Charlie", "Luna", "Rocky", "Lucy", "Daisy", "Milo", "Bailey"]
+BREED_CLASSES = ["Labrador", "Poodle", "Beagle", "German Shepherd", "Bulldog", "Golden Retriever"]
+
 # Model definition
 class CNN(nn.Module):
     def __init__(self, input_channels=1, num_classes=3):
@@ -92,8 +97,6 @@ class CNN(nn.Module):
         return F.softmax(x, dim=1)
 
 # Function for loading paths into a model
-# model_class is CNN
-# num_classes is 3 for predict_context, 10 for predict_name, and 6 for predict_breed
 def load_model(model_class, weights_path, num_classes):
     model = CNN(input_channels=1, num_classes=num_classes)
     state_dict = torch.load(weights_path, weights_only=False, map_location=torch.device("cpu"))
@@ -101,18 +104,20 @@ def load_model(model_class, weights_path, num_classes):
     model.eval()
     return model
 
-# Creating API
-'''
-from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import JSONResponse
-import torch
-import torchaudio
-from io import BytesIO
-from model_definitions import Model1, load_model
-'''
+# MelSpectrogram transformation setup
+SAMPLE_RATE = 16000
+N_MELS = 59
+HOP_LENGTH = 256
+N_FFT = 1024
+
+mel_transform = torchaudio.transforms.MelSpectrogram(
+    sample_rate=SAMPLE_RATE,
+    n_fft=N_FFT,
+    hop_length=HOP_LENGTH,
+    n_mels=N_MELS
+)
 
 app = FastAPI(max_length=10 * 1024 * 1024)
-
 
 # Load models
 context_model = load_model(CNN, "Models_format_ipynb/weightsForContextPredict.pth", num_classes=3)
@@ -125,44 +130,45 @@ def root():
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
-    # Read the audio file
     audio_bytes = await file.read()
-
     torchaudio.set_audio_backend("sox_io")
-
-    # Load audio into a waveform (ensure your file is in a format supported by torchaudio)
     waveform, sample_rate = torchaudio.load(BytesIO(audio_bytes))
-    print(f"Waveform shape: {waveform.shape}, Sample rate: {sample_rate}")
 
-    # Resample if needed (example if the model expects 16000 Hz)
-    resampler = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=16000)
-    waveform = resampler(waveform)
-    print(f"Resampled waveform shape: {waveform.shape}")
+    # Resample to match model input
+    if sample_rate != SAMPLE_RATE:
+        resampler = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=SAMPLE_RATE)
+        waveform = resampler(waveform)
 
-    # Perform prediction
+    # Mono channel
+    if waveform.shape[0] > 1:
+        waveform = waveform.mean(dim=0, keepdim=True)
+
+    # Convert to Mel Spectrogram
+    mel_spec = mel_transform(waveform)
+
+    # Pad or crop to width = 344
+    if mel_spec.shape[2] < 344:
+        pad_amt = 344 - mel_spec.shape[2]
+        mel_spec = F.pad(mel_spec, (0, pad_amt))
+    else:
+        mel_spec = mel_spec[:, :, :344]
+
+    # Add batch dimension: (1, 1, 59, 344)
+    mel_spec = mel_spec.unsqueeze(0)
+
     with torch.no_grad():
-        # Add batch dimension for models expecting it
-        context_pred = context_model(waveform.unsqueeze(0))
-        name_pred = name_model(waveform.unsqueeze(0))
-        breed_pred = breed_model(waveform.unsqueeze(0))
+        context_pred = context_model(mel_spec)
+        name_pred = name_model(mel_spec)
+        breed_pred = breed_model(mel_spec)
 
-        # Print model outputs before argmax
-        print("Context model output:", context_pred)
-        print("Name model output:", name_pred)
-        print("Breed model output:", breed_pred)
+        context_pred = torch.argmax(context_pred, dim=1).item()
+        name_pred = torch.argmax(name_pred, dim=1).item()
+        breed_pred = torch.argmax(breed_pred, dim=1).item()
 
-        # Apply softmax and argmax to get the predicted class
-        context_pred = torch.argmax(torch.nn.functional.softmax(context_pred, dim=1), dim=1).item()
-        name_pred = torch.argmax(torch.nn.functional.softmax(name_pred, dim=1), dim=1).item()
-        breed_pred = torch.argmax(torch.nn.functional.softmax(breed_pred, dim=1), dim=1).item()
-
-    # Return the predictions as a JSON response
+# Return the predictions as a JSON response
     return JSONResponse({
-        "context_prediction": context_pred,
-        "name_prediction": name_pred,
-        "breed_prediction": breed_pred
+        "context_prediction": CONTEXT_CLASSES[context_pred],
+        "name_prediction": NAME_CLASSES[name_pred],
+        "breed_prediction": BREED_CLASSES[breed_pred]
     })
-
-
-
 
