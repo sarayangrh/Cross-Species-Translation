@@ -14,15 +14,12 @@ We decided to use machine learning to decode the meaning of dog vocalizations.
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Demo / Results](#demo--results)
+- [Demo / Results](#results)
 - [Dataset](#dataset)
 - [Model Architecture](#model-architecture)
 - [Preprocessing & Segmentation](#preprocessing--segmentation)
-- [Training & Evaluation](#training--evaluation)
 - [Usage](#usage)
-- [Future Work](#future-work)
-- [Contributors](#contributors)
-- [Acknowledgments](#acknowledgments)
+- [Contributors & Acknowledgements](#contributors--acknowledgements)
 
 ---
 
@@ -88,3 +85,13 @@ Clone the repo and install dependencies:
 ```python
 # Fill in with instructions how to use
 ```
+
+---
+
+## Contributors & Acknowledgements
+
+Students Deborah Sinishaw, Ian Gifford, and Sara Yang worked on this project while taking MAIS 202 at McGill.
+We would like to thank our wonderful lecturers Shidan and Wassim and our assigned TPM, Emma.
+
+We also credit Earth Species Project for the dataset and the inspiration behind our thinking.
+Yin, S. and B. McCowan. “Barking in domestic dogs: context specificity and individual identification.” Animal Behaviour 68 (2004): 343-355.
