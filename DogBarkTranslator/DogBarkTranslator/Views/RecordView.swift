@@ -108,10 +108,16 @@ struct RecordView: View {
                                 ScrollView(.vertical, showsIndicators: false) {
                                     Text(viewModel.currentPrediction)
                                         .font(.subheadline)
-                                        .lineSpacing(20)
+                                        .lineSpacing(8)
+                                        .padding()
                                         .multilineTextAlignment(.center)
                                 }
                                 .frame(maxHeight: 200)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(Color.gray.opacity(0.1))
+                                )
+                                .padding(.horizontal)
                                 
                                 HStack(spacing: 16) {
                                     Button(action: {

@@ -103,13 +103,19 @@ class RecordViewModel: NSObject, ObservableObject {
         isProcessing = true
         do {
             let selectedTypes = getSelectedTypes()
+            print("Processing prediction for types: \(selectedTypes)")
+            
             let predictions = try await mlManager.processAudio(audioURL, for: selectedTypes)
+            print("Received \(predictions.count) predictions")
             
             // Format the prediction results for display
             currentPrediction = formatPredictionResults(predictions)
+            print("Formatted prediction: \(currentPrediction)")
+            
             lastPredictions = predictions
             lastRecordingURL = audioURL
         } catch {
+            print("Error processing prediction: \(error)")
             self.error = error
         }
         isProcessing = false
@@ -139,7 +145,7 @@ class RecordViewModel: NSObject, ObservableObject {
     // New helper function to format prediction results
     private func formatPredictionResults(_ predictions: [PredictionResult]) -> String {
         return predictions.map { result in
-            // Access properties of PredictionResult directly
+            // Build a formatted string showing non-empty predictions
             var resultStr = ""
             if !result.context_prediction.isEmpty {
                 resultStr += "Context: \(result.context_prediction)\n"
@@ -150,8 +156,8 @@ class RecordViewModel: NSObject, ObservableObject {
             if !result.breed_prediction.isEmpty {
                 resultStr += "Breed: \(result.breed_prediction)\n"
             }
-            return resultStr
-        }.joined(separator: "\n")
+            return resultStr.trimmingCharacters(in: .whitespacesAndNewlines)
+        }.joined(separator: "\n\n")
     }
 
     
