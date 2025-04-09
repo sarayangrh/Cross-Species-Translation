@@ -138,21 +138,27 @@ class RecordViewModel: NSObject, ObservableObject {
 
     // New helper function to format prediction results
     private func formatPredictionResults(_ predictions: [PredictionResult]) -> String {
-        return predictions.map { result in
-            // Access properties of PredictionResult directly
-            var resultStr = ""
+        var results: [String] = []
+
+        for result in predictions {
+            var parts: [String] = []
+
             if !result.context_prediction.isEmpty {
-                resultStr += "Context: \(result.context_prediction)\n"
+                parts.append("Context: \(result.context_prediction)")
             }
             if !result.name_prediction.isEmpty {
-                resultStr += "Name: \(result.name_prediction)\n"
+                parts.append("Name: \(result.name_prediction)")
             }
             if !result.breed_prediction.isEmpty {
-                resultStr += "Breed: \(result.breed_prediction)\n"
+                parts.append("Breed: \(result.breed_prediction)")
             }
-            return resultStr
-        }.joined(separator: "\n")
+
+            results.append(parts.joined(separator: "\n"))
+        }
+
+        return results.joined(separator: "\n\n")
     }
+
 
     
     func saveRecording(title: String, notes: String, photoURL: URL?) async {
