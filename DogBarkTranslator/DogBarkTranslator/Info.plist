@@ -27,6 +27,13 @@
     <key>NSCameraUsageDescription</key>
     <string>We need camera access to take photos for your recordings.</string>
     <key>UIApplicationSceneManifest</key>
+    
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+
     <dict>
         <key>UIApplicationSupportsMultipleScenes</key>
         <false/>
