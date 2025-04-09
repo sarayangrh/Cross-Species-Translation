@@ -103,13 +103,19 @@ class RecordViewModel: NSObject, ObservableObject {
         isProcessing = true
         do {
             let selectedTypes = getSelectedTypes()
+            print("Processing prediction for types: \(selectedTypes)")
+            
             let predictions = try await mlManager.processAudio(audioURL, for: selectedTypes)
+            print("Received \(predictions.count) predictions")
             
             // Format the prediction results for display
             currentPrediction = formatPredictionResults(predictions)
+            print("Formatted prediction: \(currentPrediction)")
+            
             lastPredictions = predictions
             lastRecordingURL = audioURL
         } catch {
+            print("Error processing prediction: \(error)")
             self.error = error
         }
         isProcessing = false
@@ -138,11 +144,17 @@ class RecordViewModel: NSObject, ObservableObject {
 
     // New helper function to format prediction results
     private func formatPredictionResults(_ predictions: [PredictionResult]) -> String {
+<<<<<<< HEAD
         var results: [String] = []
 
         for result in predictions {
             var parts: [String] = []
 
+=======
+        return predictions.map { result in
+            // Build a formatted string showing non-empty predictions
+            var resultStr = ""
+>>>>>>> 24707ce63ef4638e88d5f0f0c7e2525d9cc366c1
             if !result.context_prediction.isEmpty {
                 parts.append("Context: \(result.context_prediction)")
             }
@@ -152,11 +164,16 @@ class RecordViewModel: NSObject, ObservableObject {
             if !result.breed_prediction.isEmpty {
                 parts.append("Breed: \(result.breed_prediction)")
             }
+<<<<<<< HEAD
 
             results.append(parts.joined(separator: "\n"))
         }
 
         return results.joined(separator: "\n\n")
+=======
+            return resultStr.trimmingCharacters(in: .whitespacesAndNewlines)
+        }.joined(separator: "\n\n")
+>>>>>>> 24707ce63ef4638e88d5f0f0c7e2525d9cc366c1
     }
 
 

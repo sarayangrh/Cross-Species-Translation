@@ -60,6 +60,7 @@ struct SaveRecordingView: View {
                         .cornerRadius(8)
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
+                        .padding(.horizontal)
                 }
                 
                 if photoURL != nil {
