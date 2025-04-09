@@ -43,7 +43,7 @@ Before training, we segmented individual barks from longer audio files using **k
 We used a **Convolutional Neural Network (CNN)** with four convolutional layers.  
 
 **Key Details:**
-- Input: Bark audio converted to mel spectrograms
+- Input: 4 second bark audios converted to spectrograms
 - Loss function: Weighted CrossEntropyLoss to address class imbalance
 - Activation: ReLU
 - Optimizer: Adam
