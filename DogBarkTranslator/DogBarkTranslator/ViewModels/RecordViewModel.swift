@@ -123,6 +123,26 @@ class RecordViewModel: NSObject, ObservableObject {
 
 
     //new feature
+    func predictFromSample(named sampleName: String) async {
+        isProcessing = true
+        currentPrediction = ""
+        error = nil
+        lastPredictions = []
+        
+        do {
+            let predictions = try await mlManager.fetchSamplePrediction(for: sampleName)
+            
+            // Format the prediction results for display
+            currentPrediction = formatPredictionResults(predictions)
+            lastPredictions = predictions
+        } catch {
+            self.error = error
+        }
+
+        isProcessing = false
+    }
+
+    // New helper function to format prediction results
     private func formatPredictionResults(_ predictions: [PredictionResult]) -> String {
         return predictions.map { result in
             // Access properties of PredictionResult directly
@@ -138,40 +158,6 @@ class RecordViewModel: NSObject, ObservableObject {
             }
             return resultStr
         }.joined(separator: "\n")
-    }
-
-    // New helper function to format prediction results
-    private func formatPredictionResults(_ predictions: [PredictionResult]) -> String {
-<<<<<<< HEAD
-        var results: [String] = []
-
-        for result in predictions {
-            var parts: [String] = []
-
-=======
-        return predictions.map { result in
-            // Build a formatted string showing non-empty predictions
-            var resultStr = ""
->>>>>>> 24707ce63ef4638e88d5f0f0c7e2525d9cc366c1
-            if !result.context_prediction.isEmpty {
-                parts.append("Context: \(result.context_prediction)")
-            }
-            if !result.name_prediction.isEmpty {
-                parts.append("Name: \(result.name_prediction)")
-            }
-            if !result.breed_prediction.isEmpty {
-                parts.append("Breed: \(result.breed_prediction)")
-            }
-<<<<<<< HEAD
-
-            results.append(parts.joined(separator: "\n"))
-        }
-
-        return results.joined(separator: "\n\n")
-=======
-            return resultStr.trimmingCharacters(in: .whitespacesAndNewlines)
-        }.joined(separator: "\n\n")
->>>>>>> 24707ce63ef4638e88d5f0f0c7e2525d9cc366c1
     }
 
 
